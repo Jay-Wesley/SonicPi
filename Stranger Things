@@ -21,10 +21,10 @@ live_loop :stranger do
   sleep 0.5
 end
 
+Customized
 use_synth :bass_foundation
 use_bpm 160
 
-Customized
 live_loop :stranger do
   play :e4
   sleep 0.5
