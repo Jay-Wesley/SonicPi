@@ -1,5 +1,5 @@
 #Welcome to Sonic Pi
-
+# ORIGINAL/WRONG CODE
 live_loop :chicken1 do
   12.times do
     sample :drum_snare_soft
@@ -33,3 +33,31 @@ live_loop :done do
   end
   stop
 end
+
+# NEW/RIGHT CODE
+live_loop :chicken3 do
+  16.times do
+    sample :drum_cymbal_closed
+    sleep 0.5
+  end
+  stop
+end
+#^first sound to stop
+
+live_loop :chicken2 do
+  16.times do
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+  end
+  stop
+end
+#^second sound to stop
+
+live_loop :chicken1 do
+  24.times do
+    sample :drum_snare_soft
+    sleep 2
+  end
+  stop
+end
+#^last sound to stop
