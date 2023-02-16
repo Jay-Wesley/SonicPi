@@ -1,24 +1,4 @@
 # Welcome to Sonic Pi
 #Custom Song 2-13-23
-#Over the Rainbow - Judy Garland
-use_synth :bass_foundation
-use_bpm 84
+#Suavemente - Elvis Crespo (edited)
 
-live_loop :rainbow do
-  play :e5
-  sleep 1
-  play :g5
-  sleep 1
-  play :e5
-  sleep 1
-  play :g5
-  sleep 1
-  play :e5
-  sleep 1
-  play :g5
-  sleep 1
-  play :e5
-  sleep 1
-  play :g5
-  sleep 1
-end
