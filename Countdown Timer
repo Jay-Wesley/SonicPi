@@ -1,0 +1,12 @@
+# Welcome to Sonic Pi
+# Countdown Timer 2-27-23
+
+num = 1
+
+9.times do
+  num = num + 1 #make num bigger
+  puts(num) #num is 1
+  sleep 0.5
+end
+
+puts("HAPPY NEW YEAR!")
