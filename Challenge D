@@ -1,0 +1,121 @@
+# Welcome to Sonic Pi
+# Challenge D
+use_bpm 136
+use_synth :piano
+
+define :bob do
+  play:E3, amp: 0.25
+  sleep 1
+  play:B3, amp: 0.25
+  play:E4, amp: 0.25
+  sleep 1
+  play:B3, amp: 0.25
+  sleep 1
+  play:E4, amp: 0.25
+  sleep 1
+end
+
+define :measure1 do
+  play :r
+  sleep 1
+  play:E4
+  play:Gs4
+  sleep 2
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+define :measure2 do
+  play:E4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 2
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+define :measure5 do
+  play:B4
+  sleep 0.75
+  play:As4
+  sleep 0.25
+  play:Gs4
+  play:B4
+  sleep 0.75
+  play:Cs5
+  sleep 0.25
+  play:B4
+  sleep 1
+  play:Gs4
+  play:E5
+  sleep 1
+end
+
+live_loop:background_notes do
+  8.times do
+    bob
+  end
+  stop
+end
+
+# Measure 1
+2.times do
+  measure2
+end
+
+# Measure 3 & 4
+2.times do
+  play :r
+  sleep 1
+  play:E5
+  play:Gs4
+  play:B4
+  sleep 1
+  play:B4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+# Measure 5
+play:B4
+sleep 0.75
+play:As4
+sleep 0.25
+play:Gs4
+play:B4
+sleep 0.75
+play:Cs5
+sleep 0.25
+play:B4
+sleep 1
+play:Gs4
+play:E5
+sleep 1
+
+# Measure 6
+play :r
+sleep 1
+play:E5
+play:Gs4
+play:B4
+sleep 1
+play:B4
+sleep 1
+play:E5
+play:Gs4
+sleep 1
+
+# Measure 7
+1.times do
+  measure5
+end
+
+# Measure 8
+1.times do
+  measure2
+end
