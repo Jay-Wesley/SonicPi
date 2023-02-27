@@ -1,0 +1,12 @@
+# Welcome to Sonic Pi
+# Challenge F
+
+use_synth :piano
+x = 0.25
+y = 21
+
+88.times do
+  play y
+  sleep x
+  y = y + 1
+end
