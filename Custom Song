@@ -1,9 +1,10 @@
 # Welcome to Sonic Pi
-#Custom Song 2-16-23
-#Kill Bill - SZA
+#Custom Song 2-27-23
+#Kill Bill - SZA (edited)
 sza_background ="C:/Users/jaylynn_wesley/Downloads/SZA_interview.wav"
+
 live_loop :sza do
-  sample sza_background
+  sample sza_background, amp: 4
   sync 1
 end
 
@@ -17,7 +18,13 @@ define :bob do
   sleep 0.5
 end
 
-sample :drum_snare_soft, amp: 6
+live_loop :drum do
+  28.times do
+    sample :drum_snare_soft, amp: 2
+    sleep 1
+  end
+  stop
+end
 
 live_loop :kill do
   play :c20
