@@ -1,0 +1,13 @@
+# Welcome to Sonic Pi
+#Loops & Variables Practice 3-6-23
+x = 2
+
+4.times do
+  puts(x)
+  sleep 0.5
+  x = x + 2
+end
+
+puts("Who do we appreciate?")
+sleep 0.5
+puts("JAYLYNN")
