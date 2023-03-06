@@ -1,0 +1,11 @@
+# the array (list) below is not being used
+rainbowColors = ["red", "orange", "yellow","green", "blue", "indigo", "violet"]
+i = 0 # i for index
+
+# this code prints all the colors
+
+7.times do
+  puts(rainbowColors[i])
+  sleep(1)
+  i = i + 1
+end
