@@ -3,22 +3,34 @@
 #Kill Bill - SZA (edited)
 sza_background ="C:/Users/jaylynn_wesley/Downloads/SZA_interview.wav"
 
-live_loop :sza do
-  sample sza_background, amp: 4
-  sync 1
-end
-
 use_synth :bass_foundation
 use_bpm 89
 
+x = :c5
+m = :b5
+u = :d5
+w = :e5
+h = :g5
+y = :b4
+n = :a4
+a = :c20
+b = :d8
+
+live_loop :sza do
+  sleep 4
+  sample sza_background, amp: 2
+  sync 1
+end
+
 define :bob do
-  play :c5
+  play x
   sleep 0.5
-  play :c5
+  play x
   sleep 0.5
 end
 
 live_loop :drum do
+  sleep 8
   28.times do
     sample :drum_snare_soft, amp: 2
     sleep 1
@@ -27,29 +39,29 @@ live_loop :drum do
 end
 
 live_loop :kill do
-  play :c20
+  play a, amp: 20
   sleep 4
-  play :d8
+  play b, amp: 20
   sleep 4
   
   with_fx :distortion do
-    play :b5
+    play m
     sleep 1
-    play :g5
+    play h
     sleep 1
-    play :e5
+    play w
     sleep 1
-    play :c5
+    play x
     sleep 1
   end
   
-  play :a4
+  play n
   sleep 1
-  play :b4
+  play y
   sleep 1
-  play :c5
+  play x
   sleep 1
-  play :e5
+  play w
   sleep 1
   
   sleep 2
@@ -59,49 +71,49 @@ live_loop :kill do
   end
   
   
-  play :c5
+  play x
   sleep 0.5
-  play :d5
+  play u
   sleep 0.25
-  play :e5
+  play w
   sleep 0.5
-  play :e5
+  play w
   sleep 0.25
   
   sleep 0.5
   
-  play :c5
+  play x
   sleep 0.25
-  play :b4
+  play y
   sleep 0.25
-  play :c5
+  play x
   sleep 0.25
-  play :b4
+  play y
   sleep 0.25
   
   1.times do
     bob
   end
   
-  play :c5
+  play x
   sleep 1
-  play :b4
+  play y
   sleep 0.25
-  play :a4
+  play n
   sleep 0.25
-  play :b4
+  play y
   sleep 0.5
-  play :b4
+  play y
   sleep 0.25
   
   sleep 0.5
   
-  play :c5
+  play x
   sleep 0.25
-  play :b4
+  play y
   sleep 0.25
-  play :a4
+  play n
   sleep 0.25
-  play :b4
+  play y
   sleep 0.25
 end
