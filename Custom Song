@@ -20,13 +20,13 @@ o = 0.25
 e = 1
 t = 4
 k = 2
-v = 24
+v = 26.718163265306124
 
 define :bob do
   play x
-  sleep u
+  sleep t
   play x
-  sleep u
+  sleep t
 end
 
 live_loop :kill do
@@ -36,16 +36,15 @@ live_loop :kill do
   sleep t
   
   with_fx :distortion do
-    l = 1
-    l = l + 0.25
-    play m
-    sleep a
-    play h
-    sleep a
-    play w
-    sleep a
-    play x
-    sleep a
+    notes = [:b5, :g5, :e5, :c5]
+    f=0
+    4.times do
+      play (notes[f])
+      f = f + 1 #go to the next index
+      puts(f)
+      sleep e
+      e = e + 0.25
+    end
   end
   
   notes = [:a4, :b4, :e5, :c5]
