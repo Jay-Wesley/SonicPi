@@ -1,7 +1,7 @@
 # Welcome to Sonic Pi
 #Custom Song 2-27-23
 #Kill Bill - SZA (edited)
-sza_background ="C:/Users/jaylynn_wesley/Downloads/SZA_interview.wav"
+sza ="C:/Users/jaylynn_wesley/Downloads/SZA_interview.wav"
 
 use_synth :bass_foundation
 use_bpm 89
@@ -15,105 +15,116 @@ y = :b4
 n = :a4
 a = :c20
 b = :d8
-
-live_loop :sza do
-  sleep 4
-  sample sza_background, amp: 2
-  sync 1
-end
+p = 0.5
+o = 0.25
+e = 1
+t = 4
+k = 2
+v = 24
 
 define :bob do
   play x
-  sleep 0.5
+  sleep u
   play x
-  sleep 0.5
-end
-
-live_loop :drum do
-  sleep 8
-  28.times do
-    sample :drum_snare_soft, amp: 2
-    sleep 1
-  end
-  stop
+  sleep u
 end
 
 live_loop :kill do
   play a, amp: 20
-  sleep 4
+  sleep t
   play b, amp: 20
-  sleep 4
+  sleep t
   
   with_fx :distortion do
+    l = 1
+    l = l + 0.25
     play m
-    sleep 1
+    sleep a
     play h
-    sleep 1
+    sleep a
     play w
-    sleep 1
+    sleep a
     play x
-    sleep 1
+    sleep a
   end
   
-  play n
-  sleep 1
-  play y
-  sleep 1
-  play x
-  sleep 1
-  play w
-  sleep 1
+  notes = [:a4, :b4, :e5, :c5]
+  j=0
+  4.times do
+    play (notes[j])
+    sleep e
+    j = j + 1 #go to the next index
+    puts(j)
+  end
   
-  sleep 2
+  sleep k
   
   1.times do
     bob
   end
   
-  
   play x
-  sleep 0.5
+  sleep p
   play u
-  sleep 0.25
+  sleep o
   play w
-  sleep 0.5
+  sleep p
   play w
-  sleep 0.25
+  sleep o
   
-  sleep 0.5
+  sleep p
   
-  play x
-  sleep 0.25
-  play y
-  sleep 0.25
-  play x
-  sleep 0.25
-  play y
-  sleep 0.25
+  notes = [:c5, :b4, :c5, :b4]
+  q=0
+  4.times do
+    play (notes[q])
+    sleep o
+    q = q + 1 #go to the next index
+    puts(q)
+  end
   
   1.times do
     bob
   end
   
   play x
-  sleep 1
+  sleep e
   play y
-  sleep 0.25
+  sleep o
   play n
-  sleep 0.25
+  sleep o
   play y
-  sleep 0.5
+  sleep p
   play y
-  sleep 0.25
+  sleep o
   
-  sleep 0.5
+  sleep p
   
-  play x
-  sleep 0.25
-  play y
-  sleep 0.25
-  play n
-  sleep 0.25
-  play y
-  sleep 0.25
+  notes = [:c5, :b4, :a4, :b4]
+  d=0
+  4.times do
+    play (notes[d])
+    sleep o
+    d = d + 1 #go to the next index
+    puts(d)
+  end
+end
+
+sleep t
+
+live_loop :sza1 do
+  puts(sample_duration sza)
+  sample sza, amp: 1
+  sleep v
+  #sync 1
+end
+
+sleep t
+
+live_loop :drum do
+  28.times do
+    sample :drum_snare_soft, amp: 2.5
+    sleep e
+  end
+  stop
 end
