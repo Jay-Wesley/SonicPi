@@ -1,29 +1,47 @@
-#Welcome to Sonic Pi
+# Welcome to Sonic Pi
+# Challenge B
+#stops after 8 beats!
 
-# NEW/RIGHT CODE
-live_loop :chicken3 do
+live_loop :three do
   16.times do
     sample :drum_cymbal_closed
     sleep 0.5
   end
   stop
 end
-#^first sound to stop
 
-live_loop :chicken2 do
+#stops after 16 beats!
+live_loop :two do
   16.times do
-    sample :drum_heavy_kick, amp: 2
+    sample :drum_heavy_kick
     sleep 1
   end
   stop
 end
-#^second sound to stop
 
-live_loop :chicken1 do
-  24.times do
+#stops after 24 beats!
+live_loop :one do
+  12.times do
     sample :drum_snare_soft
     sleep 2
   end
   stop
 end
-#^last sound to stop
+
+sleep 24
+
+live_loop :drum1 do
+  4.times do
+    sample :drum_splash_hard
+    sleep 2
+  end
+  stop
+end
+
+live_loop :drum2 do
+  16.times do
+    sample :drum_cymbal_hard
+    sleep 0.5
+  end
+  stop
+end
