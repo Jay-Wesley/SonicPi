@@ -1,3 +1,5 @@
+# Welcome to Sonic Pi
+# Challenge A
 #snare two times
 2.times do
   sample :drum_snare_soft
@@ -36,3 +38,5 @@ live_loop :three do
   sample :drum_cymbal_closed
   sleep 0.5
 end
+
+
