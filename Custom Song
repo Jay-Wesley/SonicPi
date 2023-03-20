@@ -1,5 +1,5 @@
 # Welcome to Sonic Pi
-#Custom Song 2-27-23
+#Custom Song 3-20-23
 #Kill Bill - SZA (edited)
 sza ="C:/Users/jaylynn_wesley/Downloads/SZA_interview.wav"
 
@@ -22,10 +22,10 @@ t = 4
 k = 2
 v = 26.718163265306124
 
-define :bob do
-  play x
+define :bob do |n1, n2|
+  play n1
   sleep t
-  play x
+  play n2
   sleep t
 end
 
@@ -59,7 +59,7 @@ live_loop :kill do
   sleep k
   
   1.times do
-    bob
+    bob :c5, :c5
   end
   
   play x
@@ -83,7 +83,7 @@ live_loop :kill do
   end
   
   1.times do
-    bob
+    bob :c5, :c5
   end
   
   play x
