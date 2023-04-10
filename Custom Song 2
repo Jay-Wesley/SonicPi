@@ -3,6 +3,24 @@
 
 use_bpm 143
 
+define :jay do |a, b, c, d, e, f, g, h|
+  play a
+  sleep 0.25
+  play b
+  sleep 0.25
+  play c
+  sleep 0.25
+  play d
+  sleep 0.25
+  play e
+  sleep 0.25
+  play f
+  sleep 0.25
+  play g
+  sleep 0.25
+  play h
+  sleep 0.25
+end
 
 # Measure 1
 sleep 0.25
@@ -143,24 +161,11 @@ play :c4
 sleep 0.25
 play :c4
 sleep 0.25
-play :d4
-sleep 0.25
-play :d4
-sleep 0.25
-play :d4
-sleep 0.25
-play :d4
-sleep 0.25
-play :d4
-sleep 0.25
-play :e4
-sleep 0.25
-play :d4
-sleep 0.25
-play :c4
-sleep 0.25
+
+jay :d4, :d4, :d4, :d4, :d4, :e4, :d4, :c4
 
 # Measure 12 ( for you, told that lie, id kill that b****, do what)
+
 play :d4
 sleep 0.5
 play :d4
@@ -174,19 +179,5 @@ play :c4
 sleep 0.25
 play :c4
 sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
-play :g3
-sleep 0.25
-play :g3
-sleep 0.25
+
+jay :c4, :c4, :c4, :c4, :c4, :c4, :g3, :g3
