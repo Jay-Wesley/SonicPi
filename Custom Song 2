@@ -1,7 +1,16 @@
 #Welcome to Sonic Pi
-#Custom Song 2 / 4-10-23
+#Custom Song 2 / 4-13-23
+
+sza1 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 1( i think i know ).wav"
+sza2 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip2 ( ill touch that).wav"
+sza3 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 3.wav"
+sza4 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4.wav"
 
 use_bpm 143
+print sample_duration sza1 = 21.45 #sample duration
+print sample_duration sza2 = 2.3833333333333333 #sample duration
+print sample_duration sza3 = 8.34166666666666667 #sample duration
+print sample_duration sza4 = 7.15 #sample duration
 
 define :jay do |a, b, c, d, e, f, g, h|
   play a
@@ -42,15 +51,32 @@ play :b3
 sleep 0.5
 
 # Measure 1 & 2 (oohhh i think i know)
-play :a4
-play :a4
-sleep 5
-play :e4
-play :e4
-sleep 5
-play :c4
-play :c4
-sleep 5
+sleep 3.27
+live_loop :szaaaaa do
+  1.times do
+    sample sza1, amp: 3
+    sleep 1
+    #sync 1
+  end
+  stop
+end
+
+live_loop :notesza do
+  1. times do
+    play :a4
+    play :a4
+    sleep 2
+    play :e4
+    play :e4
+    sleep 2
+    play :c4
+    play :c4
+    sleep 1
+  end
+  stop
+end
+
+sleep 21.45
 
 # Measure 3
 play :d2
