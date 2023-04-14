@@ -7,10 +7,27 @@ sza3 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 3.wav"
 sza4 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4.wav"
 
 use_bpm 143
-print sample_duration sza1 = 21.45 #sample duration
-print sample_duration sza2 = 2.3833333333333333 #sample duration
-print sample_duration sza3 = 8.34166666666666667 #sample duration
-print sample_duration sza4 = 7.15 #sample duration
+
+print sample_duration sza10 = 21.45 #sample duration
+print sample_duration sza11 = 2.3833333333333333 #sample duration
+print sample_duration sza12 = 8.34166666666666667 #sample duration
+print sample_duration sza13 = 7.15 #sample duration
+
+define :sza10 do
+  sample sza1
+end
+
+define :sza11 do
+  sample sza2
+end
+
+define :sza12 do
+  sample sza3
+end
+
+define :sza13 do
+  sample sza4
+end
 
 define :jay do |a, b, c, d, e, f, g, h|
   play a
@@ -52,9 +69,10 @@ sleep 0.5
 
 # Measure 1 & 2 (oohhh i think i know)
 sleep 3.27
+
 live_loop :szaaaaa do
   1.times do
-    sample sza1, amp: 3
+    sza10, amp: 3
     sleep 1
     #sync 1
   end
