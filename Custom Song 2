@@ -4,28 +4,30 @@
 sza10 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 1( i think i know ).wav"
 sza20 = "C:/Users/jaylynn_wesley/Downloads/Snooze - clip2 edited.wav"
 sza30 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip3 edited.wav"
-sza40 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4(1) edited.mp3"
+sza40 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4(1) edited.wav"
 
 
-
-#print sample_duration
+print sample_duration sza10
+print sample_duration sza20
+print sample_duration sza30
+print sample_duration sza40
 
 use_bpm 143
 
 define :sza1 do
-  sample sza10
+  sample sza10, amp: 3
 end
 
 define :sza2 do
-  sample sza20
+  sample sza20, amp: 3
 end
 
 define :sza3 do
-  sample sza30
+  sample sza30, amp: 3
 end
 
 define :sza4 do
-  sample sza40
+  sample sza40, amp: 3
 end
 
 define :jay do |a, b, c, d, e, f, g, h|
@@ -71,7 +73,7 @@ sleep 3.27
 
 live_loop :szaa do
   1.times do
-    sza1, amp: 3
+    sza1
     sleep 1
     #sync 1
   end
@@ -127,7 +129,7 @@ sleep 4
 # Measure 6 (ill touch that fire for you)
 live_loop :szaaa do
   1.times do
-    sample sza2, amp: 3
+    sza2
     sleep 1
     #sync 1
   end
@@ -207,7 +209,7 @@ sleep 0.5
 # Measure 11 ( i do that 3, 4 times again, i testify for you)
 live_loop :szaaaa do
   1.times do
-    sample sza3, amp: 3
+    sza3
     sleep 1
     #sync 1
   end
@@ -245,7 +247,7 @@ sleep 1
 # Measure 12 ( i told that lie, id kill that b****, do what all of them around you scared to do)
 live_loop :szat do
   1.times do
-    sample sza4, amp: 3
+    sza4
     sleep 1
     #sync 1
   end
