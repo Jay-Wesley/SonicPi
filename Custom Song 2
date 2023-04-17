@@ -1,32 +1,31 @@
 #Welcome to Sonic Pi
 #Custom Song 2 / 4-13-23
 
-sza1 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 1( i think i know ).wav"
-sza2 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip2 ( ill touch that).wav"
-sza3 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 3.wav"
-sza4 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4.wav"
+sza10 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip 1( i think i know ).wav"
+sza20 = "C:/Users/jaylynn_wesley/Downloads/Snooze - clip2 edited.wav"
+sza30 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip3 edited.wav"
+sza40 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4(1) edited.mp3"
+
+
+
+#print sample_duration
 
 use_bpm 143
 
-print sample_duration sza10 = 21.45 #sample duration
-print sample_duration sza11 = 2.3833333333333333 #sample duration
-print sample_duration sza12 = 8.34166666666666667 #sample duration
-print sample_duration sza13 = 7.15 #sample duration
-
-define :sza10 do
-  sample sza1
+define :sza1 do
+  sample sza10
 end
 
-define :sza11 do
-  sample sza2
+define :sza2 do
+  sample sza20
 end
 
-define :sza12 do
-  sample sza3
+define :sza3 do
+  sample sza30
 end
 
-define :sza13 do
-  sample sza4
+define :sza4 do
+  sample sza40
 end
 
 define :jay do |a, b, c, d, e, f, g, h|
@@ -70,9 +69,9 @@ sleep 0.5
 # Measure 1 & 2 (oohhh i think i know)
 sleep 3.27
 
-live_loop :szaaaaa do
+live_loop :szaa do
   1.times do
-    sza10, amp: 3
+    sza1, amp: 3
     sleep 1
     #sync 1
   end
@@ -125,14 +124,29 @@ sleep 0.5
 # Measure 5
 sleep 4
 
-# Measure 6 (ill touch that)
-sleep 1.25
-play :e4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
+# Measure 6 (ill touch that fire for you)
+live_loop :szaaa do
+  1.times do
+    sample sza2, amp: 3
+    sleep 1
+    #sync 1
+  end
+  stop
+end
+
+live_loop :noteszaa do
+  1. times do
+    sleep 1.25
+    play :e4
+    sleep 0.25
+    play :c4
+    sleep 0.25
+    play :c4
+    sleep 0.25
+  end
+  stop
+end
+sleep 2.3833333333333333
 
 # Measure 7
 sleep 0.25
@@ -190,38 +204,78 @@ sleep 1
 play :f2
 sleep 0.5
 
+# Measure 11 ( i do that 3, 4 times again, i testify for you)
+live_loop :szaaaa do
+  1.times do
+    sample sza3, amp: 3
+    sleep 1
+    #sync 1
+  end
+  stop
+end
 
-# Measure 11 (fire for you, i do that 3, 4 times again, i testify)
-play :d4
-sleep 0.5
-play :d4
-sleep 0.25
-play :d4
-sleep 0.25
-sleep 0.25
-play :e4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
+live_loop :notsza do
+  1. times do
+    play :d4
+    sleep 0.5
+    play :d4
+    sleep 0.25
+    play :d4
+    sleep 0.25
+    sleep 0.25
+    play :e4
+    sleep 0.25
+    play :c4
+    sleep 0.25
+    play :c4
+    sleep 0.25
+  end
+  stop
+end
 
-jay :d4, :d4, :d4, :d4, :d4, :e4, :d4, :c4
+live_loop :notszaa do
+  1. times do
+    jay :d4, :d4, :d4, :d4, :d4, :e4, :d4, :c4
+  end
+  stop
+end
 
-# Measure 12 ( for you, told that lie, id kill that b****, do what)
+sleep 1
 
-play :d4
-sleep 0.5
-play :d4
-sleep 0.25
-play :d4
-sleep 0.25
-sleep 0.25
-play :e4
-sleep 0.25
-play :c4
-sleep 0.25
-play :c4
-sleep 0.25
+# Measure 12 ( i told that lie, id kill that b****, do what all of them around you scared to do)
+live_loop :szat do
+  1.times do
+    sample sza4, amp: 3
+    sleep 1
+    #sync 1
+  end
+  stop
+end
 
-jay :c4, :c4, :c4, :c4, :c4, :c4, :g3, :g3
+live_loop :notszaaa do
+  1. times do
+    play :d4
+    sleep 0.5
+    play :d4
+    sleep 0.25
+    play :d4
+    sleep 0.25
+    sleep 0.25
+    play :e4
+    sleep 0.25
+    play :c4
+    sleep 0.25
+    play :c4
+    sleep 0.25
+  end
+  stop
+end
+
+live_loop :notszax do
+  1. times do
+    jay :c4, :c4, :c4, :c4, :c4, :c4, :g3, :g3
+  end
+  stop
+end
+
+sleep 7.15
