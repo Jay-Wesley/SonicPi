@@ -6,6 +6,10 @@ sza20 = "C:/Users/jaylynn_wesley/Downloads/Snooze - clip2 edited.wav"
 sza30 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip3 edited.wav"
 sza40 = "C:/Users/jaylynn_wesley/Downloads/Snooze - SZA clip4(1) edited.wav"
 
+rainbowSZA = ["I", "LOVE", "SZA","SO", "SO", "MUCH"]
+i = 0 # i for index
+
+# this code prints all the colors
 
 print sample_duration sza10 # sample duration is 9.0
 print sample_duration sza20 # sample duration is 1.62
@@ -13,6 +17,8 @@ print sample_duration sza30 # sample duration is 3.12
 print sample_duration sza40 # sample duration is 5.54
 
 use_bpm 143
+
+y = 0.1
 
 define :sza1 do
   sample sza10, amp: 0.5
@@ -49,23 +55,30 @@ define :jay do |a, b, c, d, e, f, g, h|
   sleep 0.25
 end
 
+#sample bd-haus background
+100.times do #figure out how long the whole song is so you can find out how many times do
+  sample :ambi_piano, amp: 0.04
+  sleep y
+  y = y + 0.01
+end
+
 # Measure 1
 sleep 0.25
-play :a3
+play :a3, amp: 0.25
 sleep 0.5
-play :f4
-play :d4
-play :c4
+play :f4, amp: 0.25
+play :d4, amp: 0.25
+play :c4, amp: 0.25
 sleep 0.5
-play :a3
+play :a3, amp: 0.25
 sleep 0.5
-play :b3
+play :b3, amp: 0.25
 sleep 0.5
-play :g4
-play :e4
-play :d4
+play :g4, amp: 0.25
+play :e4, amp: 0.25
+play :d4, amp: 0.25
 sleep 0.5
-play :b3
+play :b3, amp: 0.25
 sleep 0.5
 
 # Measure 1 & 2 (oohhh i think i know)
@@ -166,13 +179,13 @@ sleep 0.5
 # Measure 7 & 8
 play :a4
 play :a4
-sleep 5
+sleep 2.25
 play :e4
 play :e4
-sleep 5
+sleep 2.25
 play :c4
 play :c4
-sleep 5
+sleep 2.25
 
 # Measure 9
 play :d2
@@ -203,25 +216,25 @@ sleep 0.5
 # Measure 11 ( i do that 3, 4 times again, i testify for you)
 1.times do
   sza3
-  sleep 100
+  sleep 6
   #sync 1
 end
 
 live_loop :notsza do
   1. times do
-    play :d4
+    play :d4, amp: 0.5
     sleep 0.5
-    play :d4
-    sleep 0.25
-    play :d4
-    sleep 0.25
-    sleep 0.25
-    play :e4
-    sleep 0.25
-    play :c4
-    sleep 0.25
-    play :c4
-    sleep 0.25
+    play :d4, amp: 0.5
+    sleep 0.5
+    play :d4, amp: 0.5
+    sleep 0.5
+    sleep 0.5
+    play :e4, amp: 0.5
+    sleep 0.5
+    play :c4, amp: 0.5
+    sleep 0.5
+    play :c4, amp: 0.5
+    sleep 0.5
   end
   stop
 end
@@ -268,4 +281,11 @@ live_loop :notszax do
   stop
 end
 
-sleep 5.54
+sleep 1
+
+#array with words
+1.times do
+  puts(rainbowSZA[i])
+  sleep(1)
+  i = i + 4
+end
