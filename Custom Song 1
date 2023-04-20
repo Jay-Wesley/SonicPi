@@ -1,7 +1,8 @@
-# Welcome to Sonic Pi
-#Custom Song 3-20-23
+#Welcome to Sonic Pi
+#Custom Song 4-19-23
 #Kill Bill - SZA (edited)
-sza ="C:/Users/jaylynn_wesley/Downloads/SZA_interview.wav"
+sza = "/Users/jaywes/Documents/SZA - Kill Bill (Vocals (Audio))(2nd sample).wav"
+sza100 = "/Users/jaywes/Documents/sza outro for song.wav"
 
 use_synth :bass_foundation
 use_bpm 89
@@ -29,11 +30,11 @@ define :bob do |n1, n2|
   sleep t
 end
 
-live_loop :kill do
+1.times do
   play a, amp: 20
-  sleep t
+  sleep k
   play b, amp: 20
-  sleep t
+  sleep k
   
   with_fx :distortion do
     notes = [:b5, :g5, :e5, :c5]
@@ -111,19 +112,23 @@ end
 
 sleep t
 
-live_loop :sza1 do
-  puts(sample_duration sza)
-  sample sza, amp: 1
-  sleep v
-  #sync 1
+live_loop :jap do
+  1.times do
+    puts(sample_duration sza)
+    sample sza, amp: 1
+    sleep v
+    #sync 1
+  end
+  stop
 end
 
 sleep t
 
-live_loop :drum do
-  28.times do
-    sample :drum_snare_soft, amp: 2.5
-    sleep e
-  end
-  stop
+
+30.times do
+  sample :drum_snare_soft, amp: 2.5
+  sleep e
 end
+
+sample sza100, amp: 6
+sleep 50
